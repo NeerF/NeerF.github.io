@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NeerF — First Website</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+  <div class="window">
+
+    <div class="titlebar">
+      <div style="display:flex; align-items:center; gap:14px;">
+        <div class="dots">
+          <span class="dot d1"></span>
+          <span class="dot d2"></span>
+          <span class="dot d3"></span>
+        </div>
+        <span class="path mono">~/neerf/first-website</span>
+      </div>
+      <nav class="mono">
+        <a href="#about">about</a>
+        <a href="#projects">projects</a>
+        <a href="#contact">contact</a>
+      </nav>
+    </div>
+
+    <section class="hero" id="about">
+      <div class="hero-main">
+      <div class="prompt-line mono">
+        <span class="sym">$</span>
+        <span>whoami</span>
+      </div>
+      <h1>Hey, I'm <span class="accent">NeerF</span><span class="cursor">&nbsp;</span></h1>
+      <p class="lede">
+        <strong>Just a beginner</strong> — learning to code by actually building things,
+        one small script at a time. This site is the first one of those things.
+        Everything below is real, working, and still very much in progress.
+      </p>
+      <div class="hero-links">
+        <a class="btn primary" href="#projects">view projects</a>
+        <a class="btn" href="https://github.com/NeerF" target="_blank" rel="noopener">github ↗</a>
+        <a class="btn" href="#contact">get in touch</a>
+      </div>
+      </div>
+
+      <aside class="stat-card mono">
+        <div class="stat-card-head">
+          <span class="sym">$</span> cat about.txt
+        </div>
+        <div class="stat-row">
+          <span class="stat-key">status</span>
+          <span class="stat-val ok">learning to code</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-key">focus</span>
+          <span class="stat-val">python</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-key">projects</span>
+          <span class="stat-val">2 shipped, more soon</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-key">stack</span>
+          <span class="stat-val">html · css · python</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-key">mode</span>
+          <span class="stat-val">building in public</span>
+        </div>
+      </aside>
+    </section>
+
+    <hr class="divider">
+
+    <section class="section" id="projects">
+      <div class="section-head">
+        <span class="sym mono">$</span>
+        <h2 class="mono">ls ./projects</h2>
+      </div>
+
+      <div class="files">
+
+        <article class="file" tabindex="0">
+          <div class="file-name">login<span class="ext">.py</span></div>
+          <p class="file-desc">
+            A command-line signup / signin system. Handles username &amp; password
+            storage, basic password-length validation, and repeat sign-ins.
+          </p>
+          <div class="snippet mono">
+            <div class="line"><span class="c">1</span>  Users = {}</div>
+            <div class="line"><span class="c">2</span>  <span class="s">print("1. Signup")</span></div>
+            <div class="line"><span class="c">3</span>  <span class="s">print("2. Signin")</span></div>
+            <div class="line"><span class="c">4</span>  <span class="s">print("3. Quit")</span></div>
+          </div>
+          <div class="file-foot">
+            <span class="status live">● pushed</span>
+            <a class="file-link" href="https://github.com/NeerF/Projects/blob/main/login.py" target="_blank" rel="noopener">source ↗</a>
+          </div>
+        </article>
+
+        <article class="file" tabindex="0">
+          <div class="file-name">calculator<span class="ext">.py</span></div>
+          <p class="file-desc">
+            A basic calculator script — takes two numbers and an operator,
+            returns the result. Next up for cleanup and a push to GitHub.
+          </p>
+          <div class="snippet mono">
+            <div class="line"><span class="c">1</span>  <span class="s"># not on GitHub yet</span></div>
+            <div class="line"><span class="c">2</span>  <span class="s"># check back soon</span></div>
+          </div>
+          <div class="file-foot">
+            <span class="status">○ local only</span>
+            <span class="file-link" style="color:var(--text-dim);">source —</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <footer id="contact">
+      <div class="section-head">
+        <span class="sym mono">$</span>
+        <h2 class="mono">contact --list</h2>
+      </div>
+      <div class="contact-list">
+        <div class="row">
+          <span class="flag">--github</span>
+          <a href="https://github.com/NeerF" target="_blank" rel="noopener">github.com/NeerF</a>
+        </div>
+        <div class="row">
+          <span class="flag">--discord</span>
+          <span class="val">n91f</span>
+        </div>
+        <div class="row">
+          <span class="flag">--email</span>
+          <a href="mailto:i.nerfff@gmail.com">i.nerfff@gmail.com</a>
+        </div>
+      </div>
+      <p class="fine">Built by NeerF. First website, more projects incoming.</p>
+    </footer>
+
+  </div>
+</div>
+
+</body>
+<script>
+  document.querySelectorAll('nav a[href^="#"]').forEach(function(link){
+    var targetId = link.getAttribute('href').slice(1);
+    if(targetId !== 'projects' && targetId !== 'contact') return;
+    link.addEventListener('click', function(){
+      var target = document.getElementById(targetId);
+      if(!target) return;
+      target.classList.remove('flash');
+      void target.offsetWidth; // restart animation even on repeat clicks
+      target.classList.add('flash');
+    });
+  });
+</script>
+</html>
